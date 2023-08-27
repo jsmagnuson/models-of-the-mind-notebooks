@@ -1,4 +1,4 @@
-collections
+#collections
 ipywidgets
 IPython.display
 math
