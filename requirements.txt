@@ -1,4 +1,4 @@
-deque
+collections
 ipywidgets
 IPython.display
 math
