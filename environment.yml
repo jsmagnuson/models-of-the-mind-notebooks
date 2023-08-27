@@ -4,10 +4,7 @@ channels:
 dependencies:
   - python
   - numpy
-  - math
   - time
-  - random
-  - threading
   - pandas
   - pip
   - pip:
@@ -18,3 +15,6 @@ dependencies:
     - plotly
     - threading
     - bokeh
+    - math
+    - random
+    - threading
