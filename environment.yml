@@ -1,0 +1,22 @@
+name: example-environment
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - psutil
+  - toolz
+  - matplotlib
+  - dill
+  - pandas
+  - partd
+  - bokeh
+  - dask
+  - collections
+  - ipywidgets
+  - IPython.display
+  - math
+  - plotly
+  - random
+  - threading
+  - time
