@@ -1,0 +1,20 @@
+IPython.display
+Layout
+collections
+import math
+ipywidgets
+itertools
+matplotlib
+mesa
+networkx
+numpy
+pandas
+plotly
+powerlaw
+random
+scipy
+seaborn as sns
+sklearn
+statsmodels
+time 
+tkinter
