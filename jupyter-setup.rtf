@@ -5,14 +5,14 @@
 {\colortbl;\red255\green255\blue255;\red5\green99\blue193;}
 {\*\expandedcolortbl;;\csgenericrgb\c1961\c38824\c75686;}
 {\info
-{\author Magnuson, James}}\margl1440\margr1440\vieww16040\viewh16180\viewkind1\viewscale160
+{\author Magnuson, James}}\margl1440\margr1440\vieww20520\viewh16180\viewkind1\viewscale160
 \deftab720
 \pard\pardeftab720\ri0\sa288\qc\partightenfactor0
 
 \f0\b\fs48 \cf0 Setting up for working with jupyter notebooks\
 \pard\pardeftab720\ri0\sa288\qc\partightenfactor0
 
-\f1\i\b0\fs21 \cf0 Last update: 04/25/2025, Jim Magnuson\
+\f1\i\b0\fs21 \cf0 Last update: 09/04/2026, Jim Magnuson\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
 \f2\i0 \cf0 It is crucial that you get your computer set up for running Jupyter lab the first week of classes. Because some notebooks require libraries that are not available on Google Colab, the only good solution is for everyone to set up Python and Jupyter on their own computers.\'a0\
@@ -52,8 +52,7 @@ If instead, you get a message like "
 
 \f3 \cf0 python3 --version
 \f2 \
-\pard\pardeftab720\ri0\sa120\partightenfactor0
-\cf0 If you still get the command not found message, you need to install Python.\
+If you still get the command not found message, you need to install Python.\
 \pard\pardeftab720\ri0\sb240\sa120\partightenfactor0
 
 \f0\b \cf0 Windows
@@ -73,15 +72,14 @@ Enter this command:\'a0\
 \f5\b0 conda
 \f4\b  installed
 \f2\i0\b0  section below.\'a0\
-\pard\pardeftab720\ri0\sa120\partightenfactor0
-\cf0 If instead, you get a message like "
+If instead, you get a message like "
 \f3 command not found: python
 \f2 ", first try this: \
-
-\f3 python3 --version
-\f2 \
 \pard\pardeftab720\ri0\sa120\partightenfactor0
-\cf0 If you still get a message like "
+
+\f3 \cf0 python3 --version
+\f2 \
+If you still get a message like "
 \f3 command not found: python3
 \f2 \'94, or if your version is less than 3.4, you need to install Python.\
 \pard\pardeftab720\ri0\sb240\sa120\partightenfactor0
@@ -104,7 +102,7 @@ Enter this command:\'a0\
 \f2  is installed, at a command line prompt, enter:\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
-\f3 \cf0 conda \'96-version\
+\f3 \cf0 conda --version\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
 \f2 \cf0 If you get a message like \'93
@@ -119,45 +117,78 @@ Enter this command:\'a0\
 \f0\b \
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
-\f2\b0 \cf0 First, we will create a new conda environment called jupyter-env.\
+\f2\b0 \cf0 First, we will 
+\f0\b create a new conda environment
+\f2\b0  called 
+\f3 jupyter-env
+\f2 .\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
 \f3 \cf0 conda create --name jupyter-env python=3.10.9 -c conda-forge\
 conda activate jupyter-env\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
-\f2 \cf0 Now that jupyter-env is activated, we can install the packages we need. For unknown reasons, the matplotlib installation is more likely to be successful if you install it separately. \
+\f2 \cf0 Now that jupyter-env is activated, we can install the packages we need. First, tell conda to use the faster \'93libmamba\'94 solver, which also prevents some potential problems with the default solver:\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
-\f3 \cf0 conda install -c conda-forge IPython ipywidgets mesa networkx numpy pandas plotly powerlaw scipy seaborn scikit-learn statsmodels tk tqdm \
-Conda install -c condo-forge matplotlib\
+\f3 \cf0 conda config --set solver libmamba\
+\pard\pardeftab720\ri0\sa120\partightenfactor0
+
+\f2 \cf0 Now 
+\f0\b install the packages
+\f2\b0 :\
+\pard\pardeftab720\ri0\sa120\partightenfactor0
+
+\f3 \cf0 conda install -c conda-forge anywidget ipython ipywidgets "mesa<3" networkx numpy plotly powerlaw matplotlib pandas scipy seaborn scikit-learn statsmodels tk tqdm\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
 \f2 \cf0 Note that you will be presented with a much longer list of packages that will be installed. That is because that list includes packages that the ones we want to install depend upon. So answer \'91y\'92 when asked if you want to proceed.\
-If you want to use PyTorch (packages for deep learning), also do this:\
+Let the command run all the way to the end. Downloading the packages is not the last step: once the download bars finish, conda still has to link the files into the environment. The installation is finished only when you see \'93Executing transaction: done\'94 and your command prompt returns. Do not close the terminal before that happens.\
+The quotation marks around "mesa<3" are required, and so is the version limit (the \'91<3\'92 part). Our agent-based modeling notebooks use the Mesa 2 interface; it doesn\'92t work with version 3 (yet). \
+\pard\pardeftab720\ri0\sa120\partightenfactor0
+\cf0 Now 
+\f0\b check that the packages really installed
+\f2\b0 . This is the only reliable way to know. Copy and paste the whole command below as a single line:\
+
+\f3 python -c "import anywidget, IPython, ipywidgets, mesa, networkx, numpy, plotly, powerlaw, matplotlib, pandas, scipy, seaborn, sklearn, statsmodels, tqdm; print('SUCCESS: all packages installed')"\
+
+\f2 If you see SUCCESS: all packages installed, you are done with this step. If instead you see an error like 
+\f3 ModuleNotFoundError: No module named \'91seaborn\'92
+\f2 , then that package did not install. Install that one package by itself and run the check again, repeating until you get the success message:\
+
+\f3 conda install -c conda-forge seaborn\
+
+\f2 If you ever want to start over with a clean environment, leave the environment, delete it, and go back to the beginning of step 4:\
+
+\f3 conda deactivate\
+conda env remove --name jupyter-env
+\f2 \
+\pard\pardeftab720\ri0\sa120\partightenfactor0
+\cf0 If you want to use PyTorch (packages for deep learning, not required for the course notebooks), also do this:\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
 \f3 \cf0 conda install pytorch torchvision -c pytorch\
-\pard\pardeftab720\ri0\sa120\partightenfactor0
+\pard\pardeftab720\ri0\sb240\sa120\partightenfactor0
 
-\f2 \cf0 \
-Now we install jupyterlab. \
+\f0\b \cf0 5. Install and test Jupyter lab
+\f2\b0 \
+\pard\pardeftab720\ri0\sa120\partightenfactor0
+\cf0 Now we 
+\f0\b install jupyterlab
+\f2\b0 . \
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
 \f3 \cf0 conda install -c conda-forge jupyterlab\
 conda install -c conda-forge ipympl\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
-\f2 \cf0 \
-Now try to open jupyter lab with the following command; it should open a new window in your default web browser (Safari, Chrome, Edge, etc.):\
+\f2 \cf0 Now try to open jupyter lab with the following command; it should open a new window in your default web browser (Safari, Chrome, Edge, etc.):\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
 \f3 \cf0 jupyter lab\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
-\f2 \cf0 \
-Of course, if you get errors at this stage or any other, ask me for help. Try to take a screenshot of the error or even better copy and paste the actual text of the error message into your email if possible. Otherwise, the installation steps are done at this point! \
-\
+\f2 \cf0 Of course, if you get errors at this stage or any other, ask me for help. Try to take a screenshot of the error or even better copy and paste the actual text of the error message into your email if possible. Otherwise, the installation steps are done at this point! \
 Subsequently, whenever you want to run jupyter lab with this environment, you need to first activate the environment, and then call jupyter lab (you can then navigate to the directory where you have the course notebooks, or you can call Jupyter lab from that directory [much easier]; I\'92ll show you this in class):\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
@@ -171,7 +202,7 @@ jupyter lab\
 \f3 \cf0 conda env list\
 \pard\pardeftab720\ri0\sb240\sa120\partightenfactor0
 
-\f0\b \cf0 5. Get course notebooks\
+\f0\b \cf0 6. Get course notebooks\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
 \f2\b0 \cf0 Go to the following URL: {\field{\*\fldinst{HYPERLINK "https://github.com/comp-cogneuro-lang/comp-neuro-course"}}{\fldrslt 
@@ -186,7 +217,7 @@ Make a directory where you want this to be located and unzip the file.\'a0\
 \f2\i0 \
 \pard\pardeftab720\ri0\sb240\sa120\partightenfactor0
 
-\f0\b \cf0 6. Open course notebooks in Jupyter lab\
+\f0\b \cf0 7. Open course notebooks in Jupyter lab\
 \pard\pardeftab720\ri0\sa120\partightenfactor0
 
 \f2\b0 \cf0 At the command line (terminal for Mac or linux,\'a0

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setting up for working with Jupyter notebooks</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1c1e21;
+    --muted: #5b6470;
+    --rule: #e2e5ea;
+    --code-bg: #f5f6f8;
+    --code-fg: #14161a;
+    --code-border: #dfe3e8;
+    --link: #0b5cad;
+    --note-bg: #eef4fb;
+    --note-border: #4a86c8;
+    --warn-bg: #fdf4e6;
+    --warn-border: #d38b1c;
+    --ok-bg: #edf7ee;
+    --ok-border: #3f9147;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16181c;
+      --fg: #e6e8eb;
+      --muted: #a2abb8;
+      --rule: #2c3037;
+      --code-bg: #1f2228;
+      --code-fg: #e6e8eb;
+      --code-border: #343941;
+      --link: #6aa9e9;
+      --note-bg: #182430;
+      --note-border: #4a86c8;
+      --warn-bg: #2a2216;
+      --warn-border: #d38b1c;
+      --ok-bg: #17251a;
+      --ok-border: #3f9147;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+
+  header { border-bottom: 2px solid var(--rule); padding-bottom: 1.1rem; margin-bottom: 1.6rem; }
+  h1 { font-size: 1.85rem; line-height: 1.25; margin: 0 0 .4rem; }
+  .updated { color: var(--muted); font-style: italic; font-size: .93rem; }
+
+  h2 {
+    font-size: 1.3rem;
+    margin: 2.6rem 0 .8rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--rule);
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  h3 { font-size: 1.03rem; margin: 1.6rem 0 .5rem; color: var(--fg); }
+
+  p, li { max-width: 42rem; }
+  a { color: var(--link); }
+  a:hover { text-decoration: none; }
+
+  /* table of contents */
+  nav {
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: 8px;
+    padding: .9rem 1.1rem;
+    margin-bottom: 2rem;
+  }
+  nav p { margin: 0 0 .45rem; font-weight: 600; font-size: .85rem;
+          text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  nav ol { margin: 0; padding-left: 1.35rem; }
+  nav li { margin: .18rem 0; }
+
+  /* commands */
+  pre {
+    background: var(--code-bg);
+    color: var(--code-fg);
+    border: 1px solid var(--code-border);
+    border-left: 3px solid var(--muted);
+    border-radius: 6px;
+    padding: .75rem .9rem;
+    overflow-x: auto;
+    font: 13.5px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+    margin: .9rem 0;
+  }
+  code {
+    font: 13.5px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: 4px;
+    padding: .08em .32em;
+  }
+  pre code { background: none; border: none; padding: 0; font-size: inherit; }
+
+  /* output samples, as opposed to commands you type */
+  pre.output {
+    border-left-color: var(--rule);
+    color: var(--muted);
+    font-style: normal;
+  }
+
+  /* callouts */
+  .callout {
+    border-left: 4px solid var(--note-border);
+    background: var(--note-bg);
+    border-radius: 0 6px 6px 0;
+    padding: .8rem 1rem;
+    margin: 1.2rem 0;
+  }
+  .callout p:first-child { margin-top: 0; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout.warn { border-left-color: var(--warn-border); background: var(--warn-bg); }
+  .callout.ok   { border-left-color: var(--ok-border);   background: var(--ok-bg); }
+  .callout .label {
+    display: block;
+    font-weight: 700;
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .3rem;
+  }
+
+  .platform {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: .1rem .55rem;
+    vertical-align: middle;
+    margin-left: .5rem;
+  }
+
+  @media print {
+    nav { display: none; }
+    body { font-size: 11pt; }
+    .wrap { max-width: none; padding: 0; }
+    h2 { page-break-after: avoid; }
+    pre, .callout { page-break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Setting up for working with Jupyter notebooks</h1>
+  <div class="updated">Last update: 09/04/2026, Jim Magnuson</div>
+</header>
+
+<p>It is crucial that you get your computer set up for running Jupyter lab the first
+week of classes. Because some notebooks require libraries that are not available on
+Google Colab, the only good solution is for everyone to set up Python and Jupyter on
+their own computers.</p>
+
+<p><strong>If you do not have a computer you can use for this course, please talk to
+the instructor ASAP.</strong></p>
+
+<p>Also, if you have more Python experience and are comfortable using conda (or other)
+environments, you may use your own setup; for other environments, you will have to set
+it up on your own. (If you get another setup working, it would be great if you could
+share instructions that I can pass on to future students!) I'm providing the simplest
+possible instructions here first.</p>
+
+<nav>
+  <p>Contents</p>
+  <ol>
+    <li><a href="#s1">Verify that you have Python</a></li>
+    <li><a href="#s2">Install Python &mdash; only if you did not find it</a></li>
+    <li><a href="#s3">Check if you have conda installed</a></li>
+    <li><a href="#s4">Install the packages we need in a virtual environment</a></li>
+    <li><a href="#s5">Install and test Jupyter lab</a></li>
+    <li><a href="#s6">Get course notebooks</a></li>
+    <li><a href="#s7">Open course notebooks in Jupyter lab</a></li>
+  </ol>
+</nav>
+
+<h2 id="s1">1. Verify that you have Python</h2>
+
+<p>More than likely, you already have Python on your computer. Your first step is to
+verify this.</p>
+
+<h3>Macintosh or Linux <span class="platform">mac &middot; linux</span></h3>
+
+<p>Open a terminal (on a Mac, go to Applications :: Utilities and open Terminal.app).
+Enter this command:</p>
+
+<pre><code>python --version</code></pre>
+
+<p>You should see a message like this, though your exact version may be different:</p>
+
+<pre class="output"><code>Python 3.14.3</code></pre>
+
+<p>As long as your version number is 3.4 or greater, you can skip to
+<a href="#s3">section 3, Check if you have conda installed</a>. If you get a lower
+version, see the link in section 2 to install Python.</p>
+
+<p>If instead you get a message like <code>command not found: python</code>, first try
+this:</p>
+
+<pre><code>python3 --version</code></pre>
+
+<p>If you still get the command not found message, you need to install Python.</p>
+
+<h3>Windows <span class="platform">windows</span></h3>
+
+<p>Open a Command Prompt or PowerShell: click on the Start Menu. In the search bar,
+type &ldquo;Command Prompt&rdquo; and hit Enter. This will open a new Command Prompt
+window (enter &lsquo;PowerShell&rsquo; instead if you prefer).</p>
+
+<p>Enter this command:</p>
+
+<pre><code>python --version</code></pre>
+
+<p>You should see a message like this, though your exact version may be different:</p>
+
+<pre class="output"><code>Python 3.10.9</code></pre>
+
+<p>That's great, and you can go to <a href="#s3">section 3, Check if you have conda
+installed</a>.</p>
+
+<p>If instead you get a message like <code>command not found: python</code>, first try
+this:</p>
+
+<pre><code>python3 --version</code></pre>
+
+<p>If you still get a message like <code>command not found: python3</code>, or if your
+version is less than 3.4, you need to install Python.</p>
+
+<h2 id="s2">2. Install Python &mdash; ONLY if you did not find it in the previous step</h2>
+
+<p>Go to the official download site and follow the instructions:
+<a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
+
+<h2 id="s3">3. Check if you have conda installed</h2>
+
+<p>We will use conda to create a virtual environment where we will install the packages
+we need for Jupyter notebooks. You could install directly in your base environment
+using pip, but this is not recommended. To see if conda is installed, at a command line
+prompt, enter:</p>
+
+<pre><code>conda --version</code></pre>
+
+<p>If you get a message like <code>conda 24.11.2</code>, you can move to the next step.
+If instead you get a message like <code>conda not found</code>, you need to install
+conda. To do so, go to this URL and follow the instructions for your operating
+system:</p>
+
+<p><a href="https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html">https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html</a></p>
+
+<h2 id="s4">4. Installing the packages we need in a virtual environment using conda</h2>
+
+<p>First, we will create a new conda environment called <code>jupyter-env</code>.</p>
+
+<pre><code>conda create --name jupyter-env python=3.10.9 -c conda-forge
+conda activate jupyter-env</code></pre>
+
+<p>Now that <code>jupyter-env</code> is activated, we can install the packages we need.
+First, tell conda to use the faster &ldquo;libmamba&rdquo; solver, which also prevents
+some potential problems with the default solver:</p>
+
+<pre><code>conda config --set solver libmamba</code></pre>
+
+<p>Now install the packages:</p>
+
+<pre><code>conda install -c conda-forge anywidget ipython ipywidgets "mesa&lt;3" networkx numpy plotly powerlaw matplotlib pandas scipy seaborn scikit-learn statsmodels tk tqdm</code></pre>
+
+<p>Note that you will be presented with a much longer list of packages that will be
+installed. That is because that list includes packages that the ones we want to install
+depend upon. So answer &lsquo;y&rsquo; when asked if you want to proceed.</p>
+
+<div class="callout warn">
+  <span class="label">Let it finish</span>
+  <p>Let the command run all the way to the end. Downloading the packages is
+  <em>not</em> the last step: once the download bars finish, conda still has to link the
+  files into the environment. The installation is finished only when you see
+  <code>Executing transaction: done</code> and your command prompt returns. Do not close
+  the terminal before that happens.</p>
+</div>
+
+<div class="callout">
+  <span class="label">About &quot;mesa&lt;3&quot;</span>
+  <p>The quotation marks around <code>"mesa&lt;3"</code> are required, and so is the
+  version limit (the <code>&lt;3</code> part). Our agent-based modeling notebooks use
+  the Mesa 2 interface; it doesn't work with version 3 (yet).</p>
+</div>
+
+<p>Now check that the packages really installed. This is the only reliable way to know.
+Copy and paste the whole command below as a single line:</p>
+
+<pre><code>python -c "import anywidget, IPython, ipywidgets, mesa, networkx, numpy, plotly, powerlaw, matplotlib, pandas, scipy, seaborn, sklearn, statsmodels, tqdm; print('SUCCESS: all packages installed')"</code></pre>
+
+<div class="callout ok">
+  <span class="label">What you should see</span>
+  <p>If you see <code>SUCCESS: all packages installed</code>, you are done with this
+  step. If instead you see an error like
+  <code>ModuleNotFoundError: No module named 'seaborn'</code>, then that package did not
+  install. Install that one package by itself and run the check again, repeating until
+  you get the success message:</p>
+  <pre><code>conda install -c conda-forge seaborn</code></pre>
+</div>
+
+<p>If you ever want to start over with a clean environment, leave the environment,
+delete it, and go back to the beginning of step 4:</p>
+
+<pre><code>conda deactivate
+conda env remove --name jupyter-env</code></pre>
+
+<p>If you want to use PyTorch (packages for deep learning, not required for the course
+notebooks), also do this:</p>
+
+<pre><code>conda install pytorch torchvision -c pytorch</code></pre>
+
+<h2 id="s5">5. Install and test Jupyter lab</h2>
+
+<p>Now we install jupyterlab.</p>
+
+<pre><code>conda install -c conda-forge jupyterlab
+conda install -c conda-forge ipympl</code></pre>
+
+<p>Now try to open Jupyter lab with the following command; it should open a new window
+in your default web browser (Safari, Chrome, Edge, etc.):</p>
+
+<pre><code>jupyter lab</code></pre>
+
+<div class="callout">
+  <span class="label">If something goes wrong</span>
+  <p>Of course, if you get errors at this stage or any other, ask me for help. Try to
+  take a screenshot of the error, or even better, copy and paste the actual text of the
+  error message into your email if possible. Otherwise, the installation steps are done
+  at this point!</p>
+</div>
+
+<p>Subsequently, whenever you want to run Jupyter lab with this environment, you need to
+first activate the environment, and then call <code>jupyter lab</code>. You can then
+navigate to the directory where you have the course notebooks, or you can call Jupyter
+lab from that directory (much easier); I'll show you this in class:</p>
+
+<pre><code>conda activate jupyter-env
+jupyter lab</code></pre>
+
+<p>If you ever forget what you called your environment, you can use this command to list
+all available environments:</p>
+
+<pre><code>conda env list</code></pre>
+
+<h2 id="s6">6. Get course notebooks</h2>
+
+<p>Go to the following URL:
+<a href="https://github.com/comp-cogneuro-lang/comp-neuro-course">https://github.com/comp-cogneuro-lang/comp-neuro-course</a></p>
+
+<p>Look for the green <strong>Code</strong> button. Click it and choose
+<strong>Download ZIP</strong>. Make a directory where you want this to be located and
+unzip the file.</p>
+
+<p><em>Note:</em> I am improving some of the later notebooks, so they are not yet
+available. You will need to download this again later in the semester. You can also
+just download the files you need one at a time.</p>
+
+<h2 id="s7">7. Open course notebooks in Jupyter lab</h2>
+
+<p>At the command line (Terminal for Mac or Linux, Command Prompt or PowerShell for
+Windows), navigate to the directory/folder where you put the course notebooks. If you
+don't know how to do that, just skip that step for now. At the command line, enter this
+command (with a space this time):</p>
+
+<pre><code>jupyter lab</code></pre>
+
+<p>If you executed this command from the folder where the notebooks are located, you
+will see the notebook files listed in the Jupyter lab file browser on the left. If you
+could not navigate to the directory location from the command line, just use the Jupyter
+lab interface to navigate there. However, you will want to learn how to navigate to that
+location &mdash; so please ask if you do not know how.</p>
+
+</div>
+</body>
+</html>
