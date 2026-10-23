@@ -674,7 +674,7 @@ any,1099.37,EH N IY
 anybody,226.92,EH N IY B AA D IY
 anyone,255.25,EH N IY W AH N
 anything,907.25,EH N IY TH IH NG
-anywhere,88.25,EH N IY HH W AE R
+anywhere,88.25,EH N IY W AE R
 aorta,1.53,EY AO R T AH
 apartheid,0.37,AH P AA R T EY T
 apartment,83.04,AH P AA R T M AH N T
@@ -1954,7 +1954,7 @@ bucket,10.02,B AH K IH T
 buckle,5.04,B AH K AH L
 buckshot,1.02,B AH K SH AA T
 buckskin,0.14,B AH K S K IH N
-buckwheat,0.47,B AH K HH W IY T
+buckwheat,0.47,B AH K W IY T
 bucolic,0.14,B Y UW K AA L IH K
 bud,35.45,B AH D
 buddy,102.88,B AH D IY
@@ -2034,7 +2034,7 @@ bus,74.18,B AH S
 busboy,1.69,B AH S B OY
 bush,14.12,B UH SH
 bushel,0.63,B UH SH AH L
-bushwhack,0.2,B UH SH HH W AE K
+bushwhack,0.2,B UH SH W AE K
 bushwhacking,0.08,B UH SH W AE K IH NG
 busier,0.55,B IH Z IY AH R
 busiest,0.86,B IH Z IY AH S T
@@ -2279,7 +2279,7 @@ carton,1.88,K AA R T AH N
 cartoon,3.76,K AA R T UW N
 cartoonist,0.33,K AA R T UW N AH S T
 cartridge,0.96,K AA R T R IH JH
-cartwheel,0.29,K AA R T HH W IY L
+cartwheel,0.29,K AA R T W IY L
 carve,3.1,K AA R V
 carver,3.16,K AA R V AH R
 carving,1.98,K AA R V IH NG
@@ -5051,7 +5051,7 @@ elope,1.31,AH L OW P
 eloquence,0.53,EH L AH K W AH N S
 eloquent,0.96,EH L AH K W AH N T
 else,449.16,EH L S
-elsewhere,6.18,EH L S HH W AE R
+elsewhere,6.18,EH L S W AE R
 elucidate,0.12,AH L UW S AH D EY T
 elucidation,0.04,IH L UW S AH D EY SH AH N
 elude,0.41,AH L UW D
@@ -5429,7 +5429,7 @@ everybody,344.22,EH V R IY B AH D IY
 everyday,10.88,EH V R IY D EY
 everyone,241.65,EH V R IY W AH N
 everything,654.88,EH V R IY TH IH NG
-everywhere,51.78,EH V R IY HH W AE R
+everywhere,51.78,EH V R IY W AE R
 evict,0.71,IH V IH K T
 evidence,85,EH V IH D IH N S
 evident,1.33,EH V IH D IH N T
@@ -7133,7 +7133,7 @@ haulage,0.04,HH AO L IH JH
 haunch,0.08,HH AO N CH
 haunt,3.57,HH AO N T
 haunting,2.16,HH AO N T IH NG
-haute,0.45,HH AH T
+haute,0.45,OW T
 have,6161.41,HH AE V
 haven,369.49,HH EY V AH N
 havoc,1.35,HH AE V AH K
@@ -10335,7 +10335,7 @@ nil,0.45,N IH L
 nine,67.47,N AY N
 nineteen,3.31,N AY N T IY N
 nineteenth,0.35,N AY N T IY N TH
-ninetieth,0.02,N AY
+ninetieth,0.02,N AY N T IY IH TH
 ninety,2.78,N AY N T IY
 ninth,6.55,N AY N TH
 nip,3.24,N IH P
@@ -10447,7 +10447,7 @@ novice,0.8,N AA V AH S
 novitiate,0.16,N OW V IH SH IH T
 novo,0.02,N OW V OW
 now,3202.61,N AW
-nowhere,39.12,N OW HH W AE R
+nowhere,39.12,N OW W AE R
 noxious,0.22,N AA K SH IH S
 nozzle,0.37,N AA Z AH L
 nuance,0.41,N UW AA N S
@@ -10912,9 +10912,9 @@ overtone,0.06,OW V AH R T OW N
 overture,1.29,OW V AH R CH UH R
 overturn,0.37,OW V AH R T AH R N
 overweight,1.82,OW V AH R W EY T
-overwhelm,0.69,OW V AH R HH W EH L M
-overwhelming,4.92,OW V AH R HH W EH L M IH NG
-overwhelmingly,0.29,OW V AH R HH W EH L M IH NG L IY
+overwhelm,0.69,OW V AH R W EH L M
+overwhelming,4.92,OW V AH R W EH L M IH NG
+overwhelmingly,0.29,OW V AH R W EH L M IH NG L IY
 overwork,0.35,OW V AH R W AH R K
 overwrite,0.1,OW V AH R R AY T
 owe,74.16,OW
@@ -14569,7 +14569,7 @@ someone,446.12,S AH M AH R
 someplace,31.59,S AH M P L EY S
 somersault,0.49,S AH M AH R S AO L T
 something,1500.16,S AH M TH IH NG
-somewhat,9.1,S AH M HH W AH T
+somewhat,9.1,S AH M W AH T
 somewhere,111.53,S AH M W EH R
 sommelier,0.12,S AH M AH L Y EY
 somnolent,0.02,S AA M N AH L AH N T
@@ -17412,55 +17412,55 @@ westerner,0.2,W EH S T AH R N AH R
 wet,39.22,W EH T
 wetland,0.1,W EH T L AE N D
 wetness,0.12,W EH T N AH S
-wetting,0.82,HH W EH T IH NG
-whack,8.92,HH W AE K
-whale,11.25,HH W EY L
+wetting,0.82,W EH T IH NG
+whack,8.92,W AE K
+whale,11.25,W EY L
 wharf,1.27,W AO R F
-what,9842.45,HH W AA T
-whatever,246.75,HH W AH T EH V AH R
-whatsoever,9.22,HH W AA T S OW EH V AH R
-wheat,5.75,HH W IY T
-wheedle,0.1,HH W IY D AH L
-wheel,27.06,HH W IY L
-wheeze,0.57,HH W IY Z
-when,2034.1,HH W EH N
-where,1830.22,HH W EH R
-whereabouts,6.41,HH W EH R AH B AW T S
-whereas,3.55,HH W EH R AE Z
-wherefore,0.86,HH W EH R F OW R
-whereupon,0.22,HH W EH R AH P AO N
-wherever,29.41,HH W EH R EH V AH R
-whet,0.16,HH W EH T
+what,9842.45,W AH T
+whatever,246.75,W AH T EH V AH R
+whatsoever,9.22,W AH T S OW EH V AH R
+wheat,5.75,W IY T
+wheedle,0.1,W IY D AH L
+wheel,27.06,W IY L
+wheeze,0.57,W IY Z
+when,2034.1,W EH N
+where,1830.22,W EH R
+whereabouts,6.41,W EH R AH B AW T S
+whereas,3.55,W EH R AE Z
+wherefore,0.86,W EH R F OW R
+whereupon,0.22,W EH R AH P AO N
+wherever,29.41,W EH R EH V AH R
+whet,0.16,W EH T
 whether,67.14,W EH DH AH R
-which,477.24,HH W IH CH
-whichever,3.2,HH W IH CH EH V AH R
-whiff,2.49,HH W IH F
-while,349.43,HH W AY L
-whim,2.33,HH W IH M
-whimper,0.73,HH W IH M P AH R
-whimsical,0.78,HH W IH M Z IH K AH L
-whine,1.63,HH W AY N
-whinny,0.25,HH W IH N IY
-whip,13.16,HH W IH P
-whiplash,1.76,HH W IH P L AE SH
+which,477.24,W IH CH
+whichever,3.2,W IH CH EH V AH R
+whiff,2.49,W IH F
+while,349.43,W AY L
+whim,2.33,W IH M
+whimper,0.73,W IH M P AH R
+whimsical,0.78,W IH M Z IH K AH L
+whine,1.63,W AY N
+whinny,0.25,W IH N IY
+whip,13.16,W IH P
+whiplash,1.76,W IH P L AE SH
 whir,0.1,W AH R
-whirl,1.75,HH W AH R L
-whirling,0.69,HH W AH R L IH NG
-whirlwind,0.96,HH W AH R L W IH N D
-whisk,0.57,HH W IH S K
-whisker,0.25,HH W IH S K AH R
+whirl,1.75,W AH R L
+whirling,0.69,W AH R L IH NG
+whirlwind,0.96,W AH R L W IH N D
+whisk,0.57,W IH S K
+whisker,0.25,W IH S K AH R
 whiskered,0.06,W IH S K AH R D
-whisky,4.02,HH W IH S K IY
-whisper,7.9,HH W IH S P AH R
-whispering,8.1,HH W IH S P AH R IH NG
-whistle,15.45,HH W IH S AH L
-whit,1.94,HH W IH T
-white,171.45,HH W AY T
-whiten,0.06,HH W AY T AH N
-whiteness,0.12,HH W AY T N IH S
-whitetail,0.02,HH W AY T EY L
-whitewash,0.65,HH W AY T W AA SH
-whiz,3.9,HH W IH Z
+whisky,4.02,W IH S K IY
+whisper,7.9,W IH S P AH R
+whispering,8.1,W IH S P AH R IH NG
+whistle,15.45,W IH S AH L
+whit,1.94,W IH T
+white,171.45,W AY T
+whiten,0.06,W AY T AH N
+whiteness,0.12,W AY T N IH S
+whitetail,0.02,W AY T EY L
+whitewash,0.65,W AY T W AA SH
+whiz,3.9,W IH Z
 who,2222.94,HH UW
 whoever,43.2,HH UW EH V AH R
 whole,385.49,HH OW L
@@ -17470,13 +17470,13 @@ wholesale,1.67,HH OW L S EY L
 wholesaler,0.18,HH OW L S EY L AH R
 wholesome,1.59,HH OW L S AH M
 wholly,1.35,HH OW L IY
-whoop,3.86,HH W UW P
-whopper,0.84,HH W AA P AH R
-whopping,0.61,HH W AA P IH NG
+whoop,3.86,W UW P
+whopper,0.84,W AA P AH R
+whopping,0.61,W AA P IH NG
 whore,21.1,HH OW R
-whorl,0.06,HH W AO R L
+whorl,0.06,W AO R L
 whosoever,0.67,HH UW S OW EH V AH R
-why,2248.76,HH W AY
+why,2248.76,W AY
 wick,2.51,W IH K
 wicked,13.29,W IH K IH D
 wickedness,0.76,W IH K IH D N IH S
@@ -17636,7 +17636,7 @@ worsted,0.14,W AH R S T IH D
 worth,109.2,W AH R TH
 worthiest,0.06,W AH R DH IY AH S T
 worthless,9.27,W AH R TH L IH S
-worthwhile,4.04,W AH R TH HH W AY L
+worthwhile,4.04,W AH R TH W AY L
 worthy,10.33,W AH R DH IY
 would,1767.88,W UH D
 wound,26.53,W AW N D
