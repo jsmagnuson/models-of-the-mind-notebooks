@@ -1,0 +1,13 @@
+# Peterson & Barney (1952) human listener vowel-identification confusion matrix.
+# Rows = intended vowel, columns = perceived vowel, order: IY IH EH AE AH AA AO UH UW ER
+# Source: pilot-b/peterson_barney_1952_vowel_confusion_matrix.csv (reordered to the model's VOW order).
+IY,10267,4,6,0,0,0,3,0,0,0
+IH,6,9549,694,2,0,1,1,0,0,26
+EH,0,257,9014,949,2,1,3,0,0,51
+AE,0,1,300,9919,15,2,2,0,0,39
+AH,0,1,1,8,9476,540,127,103,0,21
+AA,0,1,0,19,228,8936,1013,69,0,7
+AO,0,0,1,2,62,590,9534,71,5,14
+UH,0,0,1,1,171,16,51,9924,96,19
+UW,0,0,1,0,0,2,0,78,10196,2
+ER,0,0,23,6,2,2,3,0,0,10243
