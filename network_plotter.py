@@ -113,12 +113,13 @@ def calculate_node_positions(columns, plot_width, fig_width, fig_height):
     return positions
 
 def draw_neuron_with_label(ax, pos, label, column_index, num_columns, show_label=True, plot_width=1, node_radius=0.05, font_size=1.5,
-                          subtext="", subtext_color="red", nodetext="", nodetext_color="red"):
+                          subtext="", subtext_color="red", nodetext="", nodetext_color="red",
+                          edge_color="black", label_color="black"):
     font_size=font_size * plot_width
     #print(f'Neuron draw font size is {font_size}')
     node_radius = node_radius * plot_width
     # Drawing a larger neuron with label
-    circle = patches.Circle(pos, radius=node_radius, fill=False, edgecolor='black', linewidth=1.5)
+    circle = patches.Circle(pos, radius=node_radius, fill=False, edgecolor=edge_color, linewidth=1.5)
     ax.add_patch(circle)
     if show_label:
         # Adjust label position and increase font size
@@ -132,7 +133,7 @@ def draw_neuron_with_label(ax, pos, label, column_index, num_columns, show_label
         else:  # Middle columns, label above
             text_pos = (pos[0], pos[1] + label_offset)
             horizontal_alignment = 'center'
-        ax.text(text_pos[0], text_pos[1], label, horizontalalignment=horizontal_alignment, fontsize=font_size)
+        ax.text(text_pos[0], text_pos[1], label, horizontalalignment=horizontal_alignment, fontsize=font_size, color=label_color)
     # Print subtext if it is not empty
     if subtext:
         # Adjust subtext position to be directly below the node
